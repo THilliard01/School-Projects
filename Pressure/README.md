@@ -1,7 +1,4 @@
-<script
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-  type="text/javascript">
-</script>
+
 # Pressure
 *Calculating barometric pressure using a simple equation*
 
@@ -10,7 +7,9 @@ This project was one of the first I did for my Computer Science degree. This was
 
 ## Background
 **Barometric pressure** or just **air pressure**, is a measurement of force caused by the weight of air and water particles in the atmosphere. There are a couple of different ways to measure air pressure, but a common formula to calculate can be found as follows:
-$$P = P_{b}[1-\frac{L_{M, b}}{T_{M, b}}h-h_{b}]^\frac{g^{'}_{0}M_{0}}{{R*L}_{M,b}}$$
+```math
+P = P_{b}[1-\frac{L_{M, b}}{T_{M, b}}h-h_{b}]^\frac{g^{'}_{0}M_{0}}{{R*L}_{M,b}}
+```
 
 where:
 * $$P_{b}$$ is the reference pressure

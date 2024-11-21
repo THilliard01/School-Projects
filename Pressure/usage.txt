@@ -1,0 +1,9 @@
+PRESSURE REDUX: A CLI for calculating Barometric PRESSURE
+USAGE: 
+    ./pressureredux [options]
+
+OPTIONS:
+    -h                  Displays usage information
+    -i                  Calculate altitude from stdin. Default behavior.
+    -l                  Calculate altitude from provided list
+    -b                  Calculate altitude from provided CSV file

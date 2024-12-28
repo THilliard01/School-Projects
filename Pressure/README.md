@@ -1,5 +1,5 @@
 
-# Pressure
+# PRESSURE
 *Calculating barometric pressure using a simple equation*
 
 ## Introduction

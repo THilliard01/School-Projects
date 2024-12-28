@@ -10,7 +10,7 @@
  *  Calculations performed with this program attempt to provide
  *  and answer that avoids loss of significance. 
  * 
- *  @author Toby Hilliard <thilliard0@gmail.com>
+ *  @author Toby Hilliard <tchilliard0@gmail.com>
  *  @version 1.0.0
  */
 
@@ -84,6 +84,8 @@ int main(int argc, char *argv[]) {
                             token = strtok(NULL, ",");
                         }
                     }
+
+                    fclose(inputfile);
                     break;
                 case 'l':
                     int inputs = argc - 2;

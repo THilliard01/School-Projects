@@ -48,3 +48,7 @@ We can add some CLI functionality for our program by adding flag handling. In th
 * -b will specifiy a file (.csv for this project) that contains the list that the program will pull from. 
 
 We should add a -h flag to print usage information for anyone who wants to know how to utilize our program. 
+
+## Further Improvements
+Although this is a redo of a previous project, I added on some additional functionality that could also be improved. One of the biggest improvements I identified came from a conversation I had with a fellow SWE. This project was my first return to consistent C programming in 3 years. Therefore, I was a bit surprised to learn that `scanf` wasn't secure. For reasons similar to `gets`, there aren't any obvious methods to restrict the number of bytes the scanf function can take in. Therefore, it would be best to restrict the input of the program using a pre-assigned buffer, using `getline` or `fgets` to retrieve the user input and then using `sscanf` to find the values we need. 
+ 

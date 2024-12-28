@@ -56,10 +56,34 @@ int main(int argc, char *argv[]) {
                     user_calculation();
                     break;
                 case 'b':
-                    char filename[20];
-                    strncpy(filename, argv[2], 20);
+                    char filename[50];
+                    strncpy(filename, argv[2], 50);
+
+                    //  Validate given file is a CSV
+                    char filetype[5];
+                    strncpy(filetype, filename + (strlen(filename) - 4), 5);
+                    if (strcmp(".csv", filetype) != 0) {
+                        printf("Error, file not csv.\n");
+                        exit(1);
+                    }
+
+                    //  Open and read
                     FILE *inputfile = fopen(filename, "r");
-                    
+                    if (inputfile == NULL) {
+                        printf("Error, file name is incorrect/doesn't exist.\n");
+                        exit(1);
+                    }
+
+                    char buffer[1024];
+                    while (fgets(buffer, 1024, inputfile)) {
+                        char *token = strtok(buffer, ",");
+
+                        while (token != NULL) {
+                            double alt = atof(token);
+                            printf("Pressure for altitude %.2lf is %lf Pa\n", alt, calculate_pressure(alt));
+                            token = strtok(NULL, ",");
+                        }
+                    }
                     break;
                 case 'l':
                     int inputs = argc - 2;

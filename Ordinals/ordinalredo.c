@@ -26,7 +26,7 @@ int main(void) {
     getUserInput(&input, buffer);
     while(input > -1) {
         if (input > 65535) {
-            printf("Error, input is out of range. Please try again.");
+            printf("Error, input is out of range. Please try again.\n");
         }
         else {
             getOrd(input);
@@ -51,11 +51,10 @@ int main(void) {
  */
 void getUserInput(int *input, char *buffer) {
     printf("Enter an integer: ");
-    if(fgets(buffer, 7, stdin) == NULL) {
-        printf("Error, invalid input");
+    if(fgets(buffer, 7, stdin) == NULL || sscanf(buffer, "%d", input) == 0) {
+        printf("Error, invalid input\n");
         exit(1);
     }
-    sscanf(buffer, "%d", input);
 }
 
 /**
